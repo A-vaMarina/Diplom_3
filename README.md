@@ -36,7 +36,7 @@ UI-автотесты реализованы с использованием п�
 
 ## Запуск тестов
 
-Запуск всех тестов:
+Запуск всех тестов в **обоих браузерах** (Chrome и Firefox):
 
 ```bash
 pytest
@@ -55,6 +55,16 @@ pytest -v tests/test_order_feed.py
 
 ```bash
 pytest --headless
+```
+## Запуск тестов в конкретном браузере
+
+Запуск только в Chrome:
+```bash
+pytest -k chrome
+```
+Запуск только в Firefox:
+```bash
+pytest -k firefox
 ```
 
 ## Формирование Allure-отчёта
