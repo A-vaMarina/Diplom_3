@@ -51,6 +51,12 @@ pytest -v tests/test_basic.py
 pytest -v tests/test_order_feed.py
 ```
 
+Запуск только отдельного теста, например:
+
+```bash
+pytest tests/test_basic.py::TestBasicFunctionality::test_ingredient_modal_opens -v
+```
+
 Запуск в headless-режиме (без открытия окна браузера):
 
 ```bash

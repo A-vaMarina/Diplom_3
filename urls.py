@@ -1,10 +1,9 @@
 class Urls:
-    # ---------- Общее ----------
-    BASE_URL = "https://stellarburgers.education-services.ru"
 
-    # ---------- UI-страницы ----------
+    BASE_URL = "https://qa-stellarburgers.education-services.ru"
+    
+    MAIN_PAGE_URL = f"{BASE_URL}/"            # Главная страница
     ORDER_FEED_URL = f"{BASE_URL}/feed"       # Лента заказов
-    CONSTRUCTOR_URL = f"{BASE_URL}/"          # Конструктор
 
     # ---------- API-эндпоинты ----------
     REGISTER_USER_URL = f"{BASE_URL}/api/auth/register"   # POST регистрация пользователя
