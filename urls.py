@@ -10,4 +10,3 @@ class Urls:
     REGISTER_USER_URL = f"{BASE_URL}/api/auth/register"   # POST регистрация пользователя
     LOGIN_USER_URL = f"{BASE_URL}/api/auth/login"         # POST логин пользователя
     USER_URL = f"{BASE_URL}/api/auth/user"                # DELETE удаление пользователя
-    
