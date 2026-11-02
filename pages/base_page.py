@@ -13,12 +13,12 @@ class BasePage:
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     @allure.step("Подождать, пока элемент {locator} станет кликабельным")
-    def wait_for_element_clickable(self, locator, timeout=10):
+    def wait_for_element_clickable(self, locator, timeout=15):
         return WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
     @allure.step("Кликнуть по элементу {locator}")
     def click_on_element(self, locator):
-        self.driver.find_element(*locator).click()
+        self.wait_for_element_clickable(locator).click()
 
     @allure.step("Дождаться кликабельности и кликнуть по элементу {locator}")
     def wait_and_click(self, locator, timeout=10):
@@ -75,4 +75,19 @@ class BasePage:
             target.dispatchEvent(dropEvent);
             source.dispatchEvent(dragEndEvent);
         """, source, target)
-        
+
+    @allure.step("Ввести значение '{text}' в поле {locator}")
+    def send_keys_to_element(self, locator, text):
+        element = self.wait_for_element_visible(locator)
+        element.clear()
+        element.send_keys(text)
+
+    @allure.step("Кликнуть по элементу {locator} через JS")
+    def click_js(self, locator):
+        element = self.wait_for_element_visible(locator)
+        self.driver.execute_script("arguments[0].click();", element)
+
+    @allure.step("Подождать, пока атрибут {attribute} элемента {locator} будет содержать {value}")
+    def wait_for_attribute(self, locator, attribute, value, timeout=15):
+        WebDriverWait(self.driver, timeout).until(
+            EC.text_to_be_present_in_element_attribute(locator, attribute, value))

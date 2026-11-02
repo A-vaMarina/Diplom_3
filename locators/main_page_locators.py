@@ -18,9 +18,11 @@ class MainPageLocators:
     # ==========================================
     MODAL_WINDOW = (By.XPATH, "//h2[text()='Детали ингредиента']/parent::div") # модальное окно ингредиента
     MODAL_INGREDIENT_NAME = (By.XPATH, "//section[.//h2[text()='Детали ингредиента']]//p[contains(text(), 'Краторная булка N-200i')]") # название ингредиента в модальном окне
-    MODAL_CLOSE_BUTTON = (By.XPATH, "//section[contains(@class,'Modal_modal_opened')]//button//*[name()='path']")
+    MODAL_CLOSE_BUTTON = (By.XPATH, "//section[contains(@class,'Modal_modal_opened')]//button") # кнопка закрытия модального окна (крестик)
     OVERLAY = (By.XPATH, ".//div[contains(@class, 'Modal_modal_overlay__x2ZCr')]/parent::div")  # оверлей за модальным окном
     OVERLAY_ANIMATION = (By.XPATH, "//img[@alt ='loading animation']")
     ORDER_ID = (By.XPATH, ".//h2[contains(@class, 'Modal_modal__title') and contains(@class, 'text_type_digits-large')]")  # номер заказа в модальном окне
 
     # ==========================================
+    LOGIN_BUTTON = (By.XPATH, "//button[contains(text(), 'Войти в аккаунт')]")
+    
