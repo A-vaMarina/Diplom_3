@@ -1,6 +1,6 @@
 ## Задание 3: Автотесты для UI сервиса Stellar Burgers
 
-Сервис Stellar Burgers: https://qa-stellarburgers.education-services.ru/
+Сервис Stellar Burgers: https://stellarburgers.education-services.ru/
 
 UI-автотесты реализованы с использованием паттерна **Page Object Model**, фреймворка
 **pytest** и отчётов **Allure**.
